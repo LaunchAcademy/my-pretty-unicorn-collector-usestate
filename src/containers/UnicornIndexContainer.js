@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
 import UnicornTile from '../components/UnicornTile';
 
 const UnicornIndexContainer = (props) => {

@@ -4,19 +4,22 @@
 
 Let's create our very own unicorn app, where we can see a list of unicorns, add new unicorns to our list, and go to individual unicorn show pages.
 
+Currently, the `UnicornPageContainer` renders an unmade Form and an empty `UnicornIndexContainer`. Let's make this app interactive!
+
 ## Part 1
 Right now, we can't see any of the unicorns from our server on the page. Let's change that with a fetch request.
 
-* Create a `UnicornIndexContainer` that will house the list of unicorns we wish to show.
-* Add a fetch in `componentDidMount` of the `UnicornIndexContainer`, so that we can load up unicorns from our server!
+* The `UnicornIndexContainer` will house the list of unicorns we wish to show.
+* Add a fetch in `useEffect` of the `UnicornIndexContainer`, so that we can load up unicorns from our server!
 * After receiving the unicorns in the `.then` of our fetch, ensure that they display on the page correctly within `UnicornTile` components. `UnicornTile` components should only show the names of unicorns.
 
 ## Part 2
 Now I want to add new unicorns to our collection, because you can never have enough. Let's make a form component with a `POST` fetch.
   * Create a `UnicornFormContainer`. Add basic form elements to this stateful container, perhaps even with custom field components!
   * Hook up your field components so that they are `controlled components`, relying on the state of the `UnicornFormContainer`
+  * We should be able to `console.log()` our current field values when a user tries to submit the form.
 
-Uh oh, we have to somehow pass our newly created unicorn to our `UnicornIndexContainer`. Hmmmm, we'll need a new, higher order component above the `UnicornIndexContainer` and `UnicornFormContainer` to house our unicorn state. We can then pass this state to `UnicornIndexContainer`, and then add to it via the `UnicornFormContainer`.
+Uh oh, we have to somehow pass our newly created unicorn to our `UnicornIndexContainer`. Hmmmm, we'll need to move our state up to the higher order `UnicornPageContainer`. We can then pass this state to `UnicornIndexContainer`, and then add to it via the `UnicornFormContainer`.
 
   * Move the state of the unicorns list from `UnicornIndexContainer` to `UnicornsPageContainer`
   * Make an onSubmit method that will log the fields to the screen.
@@ -30,5 +33,5 @@ Uh oh, we have to somehow pass our newly created unicorn to our `UnicornIndexCon
 
   * Define routes in `App.js` such that router renders our app. Going to `"/"` or `"/unicorns"` should render the UnicornPageContainter as usual.
   * Define a route for the `/unicorns/:id`, such that a new component, `UnicornShowContainer` is rendered on the screen
-  * The `UnicornShowContainer` should display the `name` and `description` of our respective unicorn. Note: You'll likely need to make another fetch request on componentDidMount to retrieve this information.
+  * The `UnicornShowContainer` should display the `name` and `description` of our respective unicorn. Note: You'll likely need to make another fetch request on useEffect to retrieve this information.
   * Be sure to add a `Link` component, so that each `li` in our unicorns list is actually a link to the unicorn's show page.
