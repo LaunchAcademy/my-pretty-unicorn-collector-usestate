@@ -4,7 +4,7 @@ let WriteFilePlugin = require('write-file-webpack-plugin')
 module.exports = {
   entry: {
     // path: './src/main.js'
-    path: './srcFinishedNew/main.js'
+    path: './src/main.js'
   },
   output: {
     path: __dirname + '/public',

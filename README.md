@@ -8,12 +8,12 @@ Let's create our very own unicorn app, where we can see a list of unicorns, add 
 Right now, we can't see any of the unicorns from our server on the page. Let's change that with a fetch request.
 
 * Create a `UnicornIndexContainer` that will house the list of unicorns we wish to show.
-* Add a fetch in `componentDidMount` of the `UnicornIndexContainer`, so that we can load up unicorns from our server!
+* Add a fetch in `useEffect` of the `UnicornIndexContainer`, so that we can load up unicorns from our server!
 * After receiving the unicorns in the `.then` of our fetch, ensure that they display on the page correctly within `UnicornTile` components. `UnicornTile` components should only show the names of unicorns.
 
 ## Part 2
 Now I want to add new unicorns to our collection, because you can never have enough. Let's make a form component with a `POST` fetch.
-  * Create a `UnicornFormContainer`. Add basic form elements to this stateful container, perhaps even with custom field components!
+  * Create a `UnicornFormContainer`. Add basic form elements to this container, perhaps even with custom field components!
   * Hook up your field components so that they are `controlled components`, relying on the state of the `UnicornFormContainer`
 
 Uh oh, we have to somehow pass our newly created unicorn to our `UnicornIndexContainer`. Hmmmm, we'll need a new, higher order component above the `UnicornIndexContainer` and `UnicornFormContainer` to house our unicorn state. We can then pass this state to `UnicornIndexContainer`, and then add to it via the `UnicornFormContainer`.
