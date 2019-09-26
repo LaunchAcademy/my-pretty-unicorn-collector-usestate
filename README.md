@@ -13,17 +13,12 @@ Right now, we can't see any of the unicorns from our server on the page. Let's c
 
 ## Part 2
 Now I want to add new unicorns to our collection, because you can never have enough. Let's make a form component with a `POST` fetch.
-  * Create a `UnicornFormContainer`. Add basic form elements to this container, perhaps even with custom field components!
-  * Hook up your field components so that they are `controlled components`, relying on the state of the `UnicornFormContainer`
-
-Uh oh, we have to somehow pass our newly created unicorn to our `UnicornIndexContainer`. Hmmmm, we'll need a new, higher order component above the `UnicornIndexContainer` and `UnicornFormContainer` to house our unicorn state. We can then pass this state to `UnicornIndexContainer`, and then add to it via the `UnicornFormContainer`.
-
+  * Create a `NewUnicornForm` and a `UnicornsPageContainer`, which should also render `UnicornIndexContainer`
   * Move the state of the unicorns list from `UnicornIndexContainer` to `UnicornsPageContainer`
   * Make an onSubmit method that will log the fields to the screen.
-  * Be able to submit the form, passing data to the new `UnicornPageContainter` so that we can display our unicorns on the page!
+  * Be able to submit the form, passing data to the new `UnicornPageContainer` so that we can display our unicorns on the page!
   * Add a 'POST' fetch, so that newly created unicorns are persisted on our backend. The new array of unicorns should rely on the return of the fetch request, not from the form payload!
   * Pass our unicorns to the `UnicornIndexContainer`
-
 
 ## Part 3
   I wish to see ONLY one unicorn on a page, where I can see all of the little details about a unicorn. We'll need a show page and react router to help us make our dreams come true.
