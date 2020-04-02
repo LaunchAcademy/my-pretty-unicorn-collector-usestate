@@ -3,24 +3,15 @@ import React, { useState, useEffect } from 'react'
 import UnicornTile from "./UnicornTile"
 
 const UnicornIndexContainer = (props) => {
-  const [unicorns, setUnicorns] = useState([])
+  let unicorns = []
 
-  useEffect(() => {
-    fetch("/api/v1/unicorns")
-    .then((response) => {
-      return response.json()
-    })
-    .then((unicornsData) => {
-      setUnicorns(unicornsData)
-    })
-  }, [])
+  // useEffect(() => {
+  //
+  // }, [])
 
-  const unicornComponentTiles = props.unicorns.map((unicornObject) => {
+  const unicornComponentTiles = unicorns.map((unicornObject) => {
     return(
-      <UnicornTile
-        key={unicornObject.id}
-        unicornObject={unicornObject}
-      />
+      <UnicornTile/>
     )
   })
 
