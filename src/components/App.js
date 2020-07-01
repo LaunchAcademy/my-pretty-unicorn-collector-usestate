@@ -8,6 +8,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom"
 import UnicornIndexContainer from "./UnicornIndexContainer"
 
 const App = (props) => {
+
+
+  // below: to be replaced by our react router routes
   return(
     <UnicornIndexContainer />
   )
@@ -19,13 +22,3 @@ export default App
 
 
 
-
-
-
-// <BrowserRouter>
-//   <Switch>
-//     <Route exact path="/" component={UnicornPageContainer} />
-//     <Route exact path="/unicorns" component={UnicornPageContainer} />
-//     <Route exact path="/unicorns/:id" component={UnicornShowContainer} />
-//   </Switch>
-// </BrowserRouter>

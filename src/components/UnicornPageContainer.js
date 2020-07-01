@@ -5,6 +5,14 @@ import UnicornIndexContainer from "./UnicornIndexContainer"
 import UnicornFormContainer from "./UnicornFormContainer"
 
 const UnicornPageContainer = () => {
+  const [unicorns, setUnicorns] = useState([
+    {unicornName: "foob"},
+    {unicornName: "hardcoded"},
+  ])
+
+  useEffect(() => {
+    debugger
+  }, [])
 
 
   const addNewUnicornToApp = (unicornFormFields) => {
@@ -17,6 +25,7 @@ const UnicornPageContainer = () => {
         addNewUnicornToApp={addNewUnicornToApp}
       />
       <UnicornIndexContainer
+        unicorns={unicorns}
       />
     </div>
   )

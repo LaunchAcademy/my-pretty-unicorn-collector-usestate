@@ -5,9 +5,9 @@ import UnicornTile from "./UnicornTile"
 const UnicornIndexContainer = (props) => {
   let unicorns = []
 
-  // useEffect(() => {
-  //
-  // }, [])
+  useEffect(() => {
+    // define your fetch request for all unicorns here
+  }, [])
 
   const unicornComponentTiles = unicorns.map((unicornObject) => {
     return(

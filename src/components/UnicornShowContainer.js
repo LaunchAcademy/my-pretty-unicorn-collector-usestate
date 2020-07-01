@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react'
 const UnicornShowContainer = (props) => {
   const [unicornData, setUnicornData] = useState({})
 
-  // useEffect(() => {
-
-  // }, [])
+  useEffect(() => {
+    // definie a future fetch call for just one unicorn, given a prop/param
+  }, [])
 
   return(
     <div>
