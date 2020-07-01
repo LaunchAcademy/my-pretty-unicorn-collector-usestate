@@ -3,15 +3,16 @@ import React, { useState, useEffect } from 'react'
 import UnicornTile from "./UnicornTile"
 
 const UnicornIndexContainer = (props) => {
-  let unicorns = []
 
-  useEffect(() => {
-    // define your fetch request for all unicorns here
-  }, [])
 
-  const unicornComponentTiles = unicorns.map((unicornObject) => {
+  const unicornComponentTiles = props.unicorns.map((unicornObject) => {
     return(
-      <UnicornTile/>
+      <UnicornTile
+        key={unicornObject.id}
+        id={unicornObject.id}
+        unicornName={unicornObject.unicornName}
+        unicornDescription={unicornObject.unicornDescription}
+      />
     )
   })
 

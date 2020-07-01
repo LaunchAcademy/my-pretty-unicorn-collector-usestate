@@ -1,26 +1,35 @@
 import React, { useState } from 'react'
 
 const UnicornFormContainer = (props) => {
-  const [unicornFormFields, setUnicornFormFields] = useState({})
+  const [unicornFormFields, setUnicornFormFields] = useState({
+    unicornName: "",
+    unicornDescription: ""
+  })
 
   const handleFieldChange = (event) => {
-    // track potential changes to all form fields
+    setUnicornFormFields({
+      ...unicornFormFields,
+      [event.currentTarget.name]: event.currentTarget.value
+    })
   }
 
   const handleFormSubmit = (event) => {
-    // pass our unicorn information up to the PageContainer, to be persisted with fetch
+    event.preventDefault()
+
+    props.addNewUnicornToApp(unicornFormFields)
   }
 
   return(
     <div>
       <h1> Unicorn Form </h1>
 
-      <form >
+      <form onSubmit={handleFormSubmit}>
         <label> Unicorn Name:
           <input
             type="text"
             name="unicornName"
-
+            onChange={handleFieldChange}
+            value={unicornFormFields.unicornName}
           />
         </label>
 
@@ -28,6 +37,8 @@ const UnicornFormContainer = (props) => {
           <input
             type="text"
             name="unicornDescription"
+            onChange={handleFieldChange}
+            value={unicornFormFields.unicornDescription}
           />
         </label>
         
