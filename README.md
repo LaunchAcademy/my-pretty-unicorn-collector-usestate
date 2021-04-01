@@ -9,7 +9,7 @@ Right now, we can't see any of the unicorns from our server on the page. Let's c
 
 * Create a `UnicornIndexContainer` that will house the list of unicorns we wish to show.
 * Add a fetch in `useEffect` of the `UnicornIndexContainer`, so that we can load up unicorns from our server!
-* After receiving the unicorns in the `.then` of our fetch, ensure that they display on the page correctly within `UnicornTile` components. `UnicornTile` components should only show the names of unicorns.
+* After receiving the unicorns in the  of our fetch, ensure that they display on the page correctly within `UnicornTile` components. `UnicornTile` components should only show the names of unicorns.
 
 ## Part 2
 Now I want to add new unicorns to our collection, because you can never have enough. Let's make a form component with a `POST` fetch.
