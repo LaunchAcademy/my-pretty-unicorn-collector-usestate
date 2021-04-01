@@ -1,20 +1,10 @@
 import React, { useEffect, useState } from 'react'
 
 const UnicornShowContainer = (props) => {
-  const [unicornData, setUnicornData] = useState({
-    unicornName: "",
-    unicornDescription: ""
-  })
+  const [unicornData, setUnicornData] = useState(null)
  
   useEffect(() => {
-    let id = props.match.params.id
-    fetch(`/api/v1/unicorns/${id}`)
-    .then((response) => {
-      return response.json()
-    })
-    .then((parsedUnicorn) =>{
-      setUnicornData(parsedUnicorn)
-    })
+   
   }, [])
 
 
