@@ -1,21 +1,34 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
+import * as yup from 'yup';
+// import 'core-js';
 
 import UnicornIndexContainer from "./UnicornIndexContainer"
 import UnicornFormContainer from "./UnicornFormContainer"
 
 const UnicornPageContainer = () => {
   const [getUnicornObjects, setUnicornObjects] = useState([])
+  let schema = yup.object().shape({
+  name: yup.string().required(),
+  age: yup.number().required().positive().integer(),
+  email: yup.string().email(),
+  website: yup.string().url()
+});
 
-  useEffect(() => {
-    fetch("/api/v1/unicorns")
-      .then((responseObject) => {
-        return responseObject.json()
-      })
-      .then((parsedUnicornsResponseBody) => {
-        setUnicornObjects(parsedUnicornsResponseBody)
-      })
-  }, [])
+// you can try and type cast objects to the defined schema
+
+let bar = schema.cast({
+  age: '-24',
+  createdOn: '2014-09-23T19:25:25Z',
+});
+
+ 
+  async function start() {
+
+    const result = await schema.isValid(bar);
+    console.log(result)
+  }
+  debugger
 
   const addNewUnicornToApp = (unicornFormFields) => {
     // charlie should be here after submit
