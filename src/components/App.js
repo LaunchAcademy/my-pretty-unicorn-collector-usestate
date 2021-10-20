@@ -2,7 +2,7 @@ import React from 'react'
 
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 
-// import UnicornPageContainer from "./UnicornPageContainer"
+import UnicornPageContainer from "./UnicornPageContainer"
 // import UnicornShowContainer from "./UnicornShowContainer"
 
 // import UnicornIndexContainer from "./UnicornIndexContainer"
@@ -10,9 +10,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom"
 const App = (props) => {
 
   return(
-    <div>
-      Hello from App!
-    </div>
+    <UnicornPageContainer />
   )
 }
 

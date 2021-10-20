@@ -7,9 +7,9 @@ import UnicornFormContainer from "./UnicornFormContainer"
 
 const UnicornPageContainer = () => {
   const [unicorns, setUnicornObjects] = useState([])
-  let schema = yup.object().shape({
 
-});
+  useEffect(() => {
+  }, [])
 
 
 
@@ -20,6 +20,7 @@ const UnicornPageContainer = () => {
   return(
     <div>
       <UnicornFormContainer
+        addNewUnicornToApp={addNewUnicornToApp}
       />
 
       <UnicornIndexContainer
