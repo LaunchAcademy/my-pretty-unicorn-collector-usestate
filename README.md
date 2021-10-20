@@ -5,11 +5,17 @@
 Let's create our very own unicorn app, where we can see a list of unicorns, add new unicorns to our list, and go to individual unicorn show pages.
 
 ## Part 1
-Right now, we can't see any of the unicorns from our server on the page. Let's change that with a fetch request.
+Right now, we can't see any of the unicorns from our server on the page. Let's change that with a fetch request. Make sure that the `UnicornPageContainer` is the top level component until we add in react router.
 
+<<<<<<< HEAD
 * Our top level component is UnicornPageContainer that renders our form and index components. Lets focus on getting the existing unicorns to appear in the IndexContainer to start
 * Add a fetch in `useEffect` of the `UnicornPageContainer`, so that we can load up unicorns from our server!
 * After receiving the unicorns in our fetch, pass the data down to the IndexContainer, and ensure that the unicorn data is displayed on the page correctly within `UnicornTile` components. `UnicornTile` components should only show the names of unicorns.
+=======
+* The `UnicornIndexContainer` will house the list of unicorns we wish to show.
+* Add a fetch in `useEffect` of the `UnicornIndexContainer`, so that we can load up unicorns from our server!
+* After receiving the unicorns in the  of our fetch, ensure that they display on the page correctly within `UnicornTile` components. `UnicornTile` components should only show the names of unicorns.
+>>>>>>> b0b3d8aea6072612f1e43c7af279f4c7642d4537
 
 ## Part 2
 Now I want to add new unicorns to our collection, because you can never have enough. Let's make a form component with a `POST` fetch.

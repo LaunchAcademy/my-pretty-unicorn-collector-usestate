@@ -1,25 +1,19 @@
 import React, { useState } from 'react'
 
 const UnicornFormContainer = (props) => {
+  const handleFormSubmit = () => {
 
-  const handleFieldChange = (event) => {
-    // track potential changes to all form fields
-  }
-
-  const handleFormSubmit = (event) => {
-    // pass our unicorn information up to the PageContainer, to be persisted with fetch
   }
 
   return(
     <div>
       <h1> Unicorn Form </h1>
 
-      <form >
+      <form onSubmit={handleFormSubmit}>
         <label> Unicorn Name:
           <input
             type="text"
             name="unicornName"
-
           />
         </label>
 

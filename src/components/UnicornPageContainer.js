@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 
+
 import UnicornIndexContainer from "./UnicornIndexContainer"
 import UnicornFormContainer from "./UnicornFormContainer"
 
 const UnicornPageContainer = () => {
-  const [unicorns, setUnicorns] = useState([
-    {unicornName: "foob"},
-    {unicornName: "hardcoded"},
-  ])
+  const [unicorns, setUnicornObjects] = useState([])
 
   useEffect(() => {
   }, [])
 
 
-  const addNewUnicornToApp = (unicornFormFields) => {
 
+  const addNewUnicornToApp = (unicornFormFields) => {
+   
   }
 
   return(
@@ -23,6 +22,7 @@ const UnicornPageContainer = () => {
       <UnicornFormContainer
         addNewUnicornToApp={addNewUnicornToApp}
       />
+
       <UnicornIndexContainer
         unicorns={unicorns}
       />

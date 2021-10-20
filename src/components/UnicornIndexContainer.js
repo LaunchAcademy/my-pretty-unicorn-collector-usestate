@@ -3,11 +3,12 @@ import React, { useState, useEffect } from 'react'
 import UnicornTile from "./UnicornTile"
 
 const UnicornIndexContainer = (props) => {
- 
 
   const unicornComponentTiles = props.unicorns.map((unicornObject) => {
     return(
-      <UnicornTile/>
+      <UnicornTile
+      
+      />
     )
   })
 

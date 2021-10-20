@@ -17,8 +17,6 @@ end
 
 get "/" do
   erb :home
-
-  # redirect "/unicorns"
 end
 
 get "/unicorns" do
@@ -31,7 +29,6 @@ end
 
 # API ENDPOINTS
 get "/api/v1/unicorns" do
-  # binding.pry
   unicorns = read_unicorns
 
   content_type :json
@@ -39,6 +36,7 @@ get "/api/v1/unicorns" do
 end
 
 get "/api/v1/unicorns/:id" do
+  # binding.pry
   unicorns = read_unicorns
 
   unicorn = unicorns.find do |unicorn|
@@ -50,6 +48,7 @@ get "/api/v1/unicorns/:id" do
 end
 
 post "/api/v1/unicorns" do
+  binding.pry
   current_unicorns = read_unicorns
 
   unicorn = JSON.parse(request.body.read)
@@ -65,6 +64,6 @@ post "/api/v1/unicorns" do
 end
 
 # SINATRA VIEWS ROUTES
-get "*" do
-  erb :home
-end
+# get "*" do
+#   erb :home
+# end

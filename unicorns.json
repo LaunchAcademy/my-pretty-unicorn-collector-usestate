@@ -28,5 +28,10 @@
     "unicornName": "Joss the Forbidden Whedon",
     "unicornDescription": "the secret of Joss has been revealed :O",
     "id": 6
+  },
+  {
+    "unicornName": "Charlie the Unicorn",
+    "unicornDescription": "existential crisis pony",
+    "id": 7
   }
 ]
