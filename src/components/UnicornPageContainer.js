@@ -5,17 +5,28 @@ import UnicornIndexContainer from "./UnicornIndexContainer"
 import UnicornFormContainer from "./UnicornFormContainer"
 
 const UnicornPageContainer = () => {
-  const [unicorns, setUnicorns] = useState([
-    {unicornName: "foob"},
-    {unicornName: "hardcoded"},
-  ])
+  const [unicorns, setUnicorns] = useState([])
+
+  const fetchUnicorns = async () => {
+    const response = await fetch("/api/v1/unicorns")
+    const parsedUnicornArray = await response.json()
+    setUnicorns(parsedUnicornArray)
+  }
 
   useEffect(() => {
+    fetchUnicorns()
   }, [])
 
 
-  const addNewUnicornToApp = (unicornFormFields) => {
+  const addNewUnicornToApp = async (unicornFormFields) => {
 
+    const response = await fetch("/api/v1/unicorns", { 
+      method: "POST",
+      body: JSON.stringify(unicornFormFields)
+    })
+    const parsedUnicornResponse = await response.json()
+    
+    setUnicorns([...unicorns, parsedUnicornResponse])
   }
 
   return(

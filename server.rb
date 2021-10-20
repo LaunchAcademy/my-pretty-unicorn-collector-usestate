@@ -17,8 +17,6 @@ end
 
 get "/" do
   erb :home
-
-  # redirect "/unicorns"
 end
 
 get "/unicorns" do
@@ -31,7 +29,6 @@ end
 
 # API ENDPOINTS
 get "/api/v1/unicorns" do
-  # binding.pry
   unicorns = read_unicorns
 
   content_type :json

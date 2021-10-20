@@ -7,7 +7,11 @@ const UnicornIndexContainer = (props) => {
 
   const unicornComponentTiles = props.unicorns.map((unicornObject) => {
     return(
-      <UnicornTile/>
+      <UnicornTile
+        unicornName={unicornObject.unicornName}
+        id={unicornObject.id}
+        key={unicornObject.id}
+      />
     )
   })
 
