@@ -7,14 +7,12 @@ Let's create our very own unicorn app, where we can see a list of unicorns, add 
 ## Part 1
 Right now, we can't see any of the unicorns from our server on the page. Let's change that with a fetch request.
 
-* Create a `UnicornIndexContainer` that will house the list of unicorns we wish to show.
-* Add a fetch in `useEffect` of the `UnicornIndexContainer`, so that we can load up unicorns from our server!
-* After receiving the unicorns in the `.then` of our fetch, ensure that they display on the page correctly within `UnicornTile` components. `UnicornTile` components should only show the names of unicorns.
+* Our top level component is UnicornPageContainer that renders our form and index components. Lets focus on getting the existing unicorns to appear in the IndexContainer to start
+* Add a fetch in `useEffect` of the `UnicornPageContainer`, so that we can load up unicorns from our server!
+* After receiving the unicorns in our fetch, pass the data down to the IndexContainer, and ensure that the unicorn data is displayed on the page correctly within `UnicornTile` components. `UnicornTile` components should only show the names of unicorns.
 
 ## Part 2
 Now I want to add new unicorns to our collection, because you can never have enough. Let's make a form component with a `POST` fetch.
-  * Create a `NewUnicornForm` and a `UnicornsPageContainer`, which should also render `UnicornIndexContainer`
-  * Move the state of the unicorns list from `UnicornIndexContainer` to `UnicornsPageContainer`
   * Make an onSubmit method that will log the fields to the screen.
   * Be able to submit the form, passing data to the new `UnicornPageContainer` so that we can display our unicorns on the page!
   * Add a 'POST' fetch, so that newly created unicorns are persisted on our backend. The new array of unicorns should rely on the return of the fetch request, not from the form payload!

@@ -11,7 +11,6 @@ const UnicornPageContainer = () => {
   ])
 
   useEffect(() => {
-    debugger
   }, [])
 
 

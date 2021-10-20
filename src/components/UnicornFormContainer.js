@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 const UnicornFormContainer = (props) => {
-  const [unicornFormFields, setUnicornFormFields] = useState({})
 
   const handleFieldChange = (event) => {
     // track potential changes to all form fields
