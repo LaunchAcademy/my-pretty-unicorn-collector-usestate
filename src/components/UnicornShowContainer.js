@@ -11,7 +11,7 @@ const UnicornShowContainer = (props) => {
 
   return(
     <div>
-      <h4> Hello from Show </h4>
+      <h4> Unicorn Show Page </h4>
       {unicornData.unicornName}
       <br/>
       {unicornData.unicornDescription}
