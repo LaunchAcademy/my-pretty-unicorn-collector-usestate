@@ -5,25 +5,24 @@
 Let's create our very own unicorn app, where we can see a list of unicorns, add new unicorns to our list, and go to individual unicorn show pages.
 
 ## Part 1
-Right now, we can't see any of the unicorns from our server on the page. Let's change that with a fetch request.
+Right now, we can't see any of the unicorns from our server on the page. The `UnicornListPage` will be your primary, top level component to start. Let's update it to retrieve our unicorns data with fetch.
 
-* Create a `UnicornIndexContainer` that will house the list of unicorns we wish to show.
-* Add a fetch in `useEffect` of the `UnicornIndexContainer`, so that we can load up unicorns from our server!
+* Familiarize yourself with the `UnicornList` component.
+* Fetch the unicorns from the backend such that they display on the page.
 * After receiving the unicorns in the  of our fetch, ensure that they display on the page correctly within `UnicornTile` components. `UnicornTile` components should only show the names of unicorns.
 
 ## Part 2
-Now I want to add new unicorns to our collection, because you can never have enough. Let's make a form component with a `POST` fetch.
-  * Create a `NewUnicornForm` and a `UnicornsPageContainer`, which should also render `UnicornIndexContainer`
-  * Move the state of the unicorns list from `UnicornIndexContainer` to `UnicornsPageContainer`
-  * Make an onSubmit method that will log the fields to the screen.
-  * Be able to submit the form, passing data to the new `UnicornPageContainer` so that we can display our unicorns on the page!
-  * Add a 'POST' fetch, so that newly created unicorns are persisted on our backend. The new array of unicorns should rely on the return of the fetch request, not from the form payload!
-  * Pass our unicorns to the `UnicornIndexContainer`
+We want to add new unicorns to our collection, because you can never have enough. Let's make a form component, that will eventually POST to the backend to persist our new unicorn.
+  * Your unicorn form should be rendered by the UnicornListPage
+  * Ensure that what is typed into the form is persisted in state
+  * Ensure that your input fields are **controlled**, and that any change to state changes what is displayed in those form fields. Use the `value` property of the input field as needed.
+  * Be able to submit the form, such that it makes a post request to the backend to persist our new unicorn.
+  * After the response is returned from fetch, take the newly persisted unicorn from the backend and add it to state, such that the screen updates with your new unicorn without needing a page refresh. 
 
 ## Part 3
   I wish to see ONLY one unicorn on a page, where I can see all of the little details about a unicorn. We'll need a show page and react router to help us make our dreams come true.
 
-  * Define routes in `App.js` such that router renders our app. Going to `"/"` or `"/unicorns"` should render the UnicornPageContainter as usual.
-  * Define a route for the `/unicorns/:id`, such that a new component, `UnicornShowContainer` is rendered on the screen
-  * The `UnicornShowContainer` should display the `name` and `description` of our respective unicorn. Note: You'll likely need to make another fetch request on componentDidMount to retrieve this information.
-  * Be sure to add a `Link` component, so that each `li` in our unicorns list is actually a link to the unicorn's show page.
+  * Define routes in `App.js` such that router renders our app. Going to `"/"` or `"/unicorns"` should render the UnicornListPage.
+  * Define a route for the `/unicorns/:id`, such that a new component, `UnicornDetailsPage` is rendered on the screen
+  * The `UnicornDetailsPage` should display the `name` and `description` of our respective unicorn. We'll need to use fetch to retrieve the data for this specific unicorn.
+  * Be sure to add a `Link` component, so that each `li` in our unicorns list is actually a link to the appropriate unicorn's show page.

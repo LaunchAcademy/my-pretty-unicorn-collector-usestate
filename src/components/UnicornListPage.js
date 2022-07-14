@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
 
-import UnicornIndexContainer from "./UnicornIndexContainer"
-import UnicornFormContainer from "./UnicornFormContainer"
+import UnicornIndexContainer from "./UnicornList"
+import UnicornForm from "./UnicornForm"
 
-const UnicornPageContainer = () => {
+const UnicornListPage = () => {
 
   const [unicorns, setUnicornObjects] = useState([])
 
@@ -14,7 +14,7 @@ const UnicornPageContainer = () => {
 
   return(
     <div>
-      <UnicornFormContainer
+      <UnicornForm
       />
 
       <UnicornIndexContainer
@@ -24,4 +24,4 @@ const UnicornPageContainer = () => {
   )
 }
 
-export default UnicornPageContainer
+export default UnicornListPage

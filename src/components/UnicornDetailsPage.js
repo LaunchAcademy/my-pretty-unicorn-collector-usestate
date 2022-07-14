@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const UnicornShowContainer = (props) => {
+const UnicornDetailsPage = (props) => {
   const [unicornData, setUnicornData] = useState(null)
  
   useEffect(() => {
@@ -19,4 +19,4 @@ const UnicornShowContainer = (props) => {
   )
 }
 
-export default UnicornShowContainer
+export default UnicornDetailsPage

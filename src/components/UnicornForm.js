@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const UnicornFormContainer = (props) => {
+const UnicornForm = (props) => {
  
 
   const handleFormSubmit = () => {
@@ -32,4 +32,4 @@ const UnicornFormContainer = (props) => {
   )
 }
 
-export default UnicornFormContainer
+export default UnicornForm
