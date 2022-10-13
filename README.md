@@ -24,7 +24,7 @@ We want to add new unicorns to our collection because you can never have enough.
 
 ## Part 3
 
-I wish to see ONLY one unicorn on a page, where I can see all of the little details about a unicorn. We'll need a show page and react router to help us make our dreams come true.
+I wish to see ONLY one unicorn on a page, where I can see all of the little details about a unicorn. We'll need a show page and React router to help us make our dreams come true.
 
 - Define routes in `App.js` such that the router renders our app. Going to `"/"` or `"/unicorns"` should render the UnicornListPage.
 - Define a route for the `/unicorns/:id`, such that a new component, `UnicornDetailsPage` is rendered on the screen
