@@ -1,10 +1,28 @@
 import React, { useState } from 'react'
 
 const UnicornForm = (props) => {
- 
+  const [newUnicornData, setNewUnicornData] = useState({
+    unicornName: "",
+    unicornDescription: ""
+  })
 
-  const handleFormSubmit = () => {
+  const handleChange = (event) => {
+    
+    // console.log(event.currentTarget.value)
+    setNewUnicornData({
+      ...newUnicornData,
+      [event.currentTarget.name]: event.currentTarget.value
+    })
+  }
 
+  const handleFormSubmit = (event) => {
+    event.preventDefault()
+    // debugger
+    props.addNewUnicornToApp(newUnicornData)
+    setNewUnicornData({
+      unicornName: "",
+      unicornDescription: ""
+    })
   }
 
   return(
@@ -16,6 +34,8 @@ const UnicornForm = (props) => {
           <input
             type="text"
             name="unicornName"
+            value={newUnicornData.unicornName}
+            onChange={handleChange}
           />
         </label>
 
@@ -23,6 +43,8 @@ const UnicornForm = (props) => {
           <input
             type="text"
             name="unicornDescription"
+            value={newUnicornData.unicornDescription}
+            onChange={handleChange}
           />
         </label>
         

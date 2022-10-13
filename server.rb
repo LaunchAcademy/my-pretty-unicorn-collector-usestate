@@ -48,10 +48,11 @@ get "/api/v1/unicorns/:id" do
 end
 
 post "/api/v1/unicorns" do
-  binding.pry
+  # binding.pry
   current_unicorns = read_unicorns
-
+  
   unicorn = JSON.parse(request.body.read)
+  # binding.pry
 
   unicorn["id"] = current_unicorns.last["id"] + 1
 

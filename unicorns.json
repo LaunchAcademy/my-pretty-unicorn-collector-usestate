@@ -33,5 +33,25 @@
     "unicornName": "Charlie the Unicorn",
     "unicornDescription": "existential crisis pony",
     "id": 7
+  },
+  {
+    "unicornName": "Toews",
+    "unicornDescription": "Dragon",
+    "id": 8
+  },
+  {
+    "unicornName": "Jagr",
+    "unicornDescription": "Spider",
+    "id": 9
+  },
+  {
+    "unicornName": "Cooper",
+    "unicornDescription": "the doggo",
+    "id": 10
+  },
+  {
+    "unicornName": "banana",
+    "unicornDescription": "not a unicorn",
+    "id": 11
   }
 ]
